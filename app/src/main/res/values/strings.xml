@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tiago TFL Coding Exercice</string>
+    <string name="road_input_hint">Road name</string>
+    <string name="title_mainscreen">Search for a road and find about its status</string>
+    <string name="go">Find</string>
+    <string name="roadName">Road Name</string>
+    <string name="roadStatus">Status</string>
+    <string name="error_road_not_found">Error: Road not found</string>
+    <string name="error_server_down">Error: TFL service is having difficulties</string>
+    <string name="error_network">Error: There were some diffculties with the network</string>
+    <string name="error_unknown">Error: Something very bad happened</string>
+</resources>

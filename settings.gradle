@@ -1,0 +1,2 @@
+include ':app', ':entities', ':tflservice', ':usecases'
+include ':testdata'

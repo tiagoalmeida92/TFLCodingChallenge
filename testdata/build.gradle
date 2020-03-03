@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+apply from: '../dependency_versions.gradle'
+
+dependencies {
+    implementation project(':entities')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
