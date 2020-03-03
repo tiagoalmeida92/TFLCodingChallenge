@@ -9,7 +9,7 @@ import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 open class RoadStatusResponseParser {
     open fun parse(rawRoadStatusResponse: RawRoadStatusResponse): RoadStatusResponse {
         val code = rawRoadStatusResponse.code
-        if(code == 200)
+        if (code == 200)
             return createSuccessResponse(rawRoadStatusResponse)
         return createFailedResponse(code)
     }
@@ -19,7 +19,9 @@ open class RoadStatusResponseParser {
         val roadStatus = RoadStatus(
             rawRoadStatus.id,
             rawRoadStatus.displayName,
-            RoadStatusSeverity.values()[rawRoadStatus.statusSeverity.ordinal],
+            rawRoadStatus.statusSeverity?.let {
+                RoadStatusSeverity.values()[rawRoadStatus.statusSeverity.ordinal]
+            } ?: RoadStatusSeverity.UNKNOWN,
             rawRoadStatus.statusSeverityDescription
         )
         return RoadStatusResponse.createSuccess(roadStatus)
@@ -27,7 +29,7 @@ open class RoadStatusResponseParser {
 
     private fun createFailedResponse(code: Int): RoadStatusResponse {
         return RoadStatusResponse.createFailure(
-            when(code){
+            when (code) {
                 404 -> FailureReason.ROAD_NOT_FOUND
                 500 -> FailureReason.SERVER_ERROR
                 else -> FailureReason.UNKNOWN

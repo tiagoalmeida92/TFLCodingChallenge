@@ -22,11 +22,11 @@ class RoadStatusServiceImplTest {
     private val roadStatusApi: RoadStatusApi = mock()
     private val parser: RoadStatusResponseParser = mock()
 
-    private lateinit var roadStatusServiceImpl: RoadStatusDataSourceImpl
+    private lateinit var roadStatusServiceImpl: RoadStatusService
 
     @Before
     fun setUp() {
-        roadStatusServiceImpl = RoadStatusDataSourceImpl(roadStatusApi, parser)
+        roadStatusServiceImpl = RoadStatusService(roadStatusApi, parser)
     }
 
     @Test

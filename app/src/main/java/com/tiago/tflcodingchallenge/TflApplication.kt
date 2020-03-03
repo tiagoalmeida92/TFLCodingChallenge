@@ -1,10 +1,10 @@
 package com.tiago.tflcodingchallenge
 
 import android.app.Application
+import com.tiago.tflcodingchallenge.di.DaggerApplicationComponent
 
 class TflApplication : Application() {
 
-    override fun onCreate() {
-        super.onCreate()
-    }
+    val appComponent = DaggerApplicationComponent.create()
+
 }

@@ -1,3 +1,4 @@
+/*
 package com.tiago.tflcodingchallenge.service.utils
 
 import com.tiago.tflcodingchallenge.entities.RoadStatus
@@ -15,3 +16,4 @@ class TflServiceDataConverterImpl : TflServiceDataConverter {
     }
 
 }
+*/

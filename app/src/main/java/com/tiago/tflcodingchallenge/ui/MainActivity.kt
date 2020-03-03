@@ -11,18 +11,26 @@ import com.tiago.tflcodingchallenge.R
 import com.tiago.tflcodingchallenge.databinding.ActivityMainBinding
 import com.tiago.tflcodingchallenge.entities.RoadStatus
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
+import injector
+import kotlinx.android.synthetic.main.activity_main.view.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injector.inject(this)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupListeners()
-        setupViewModel()
+        mainViewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        observeViewModel()
     }
 
     private fun setupListeners() {
@@ -32,8 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupViewModel() {
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+    private fun observeViewModel() {
         mainViewModel.liveData.observe(this, Observer { state ->
             when (state) {
                 //is MainViewState.WaitingInput -> showInitialState()
@@ -41,14 +48,14 @@ class MainActivity : AppCompatActivity() {
                 is MainViewState.Loading -> showLoading()
                 is MainViewState.Data -> showRoadStatus(state.roadStatus)
             }
-        }
-
-        )
+        })
     }
 
     private fun showRoadStatus(roadStatus: RoadStatus) {
         hideLoading()
         binding.roadDetails.visibility = VISIBLE
+        binding.roadDetails.roadNameLabel.text = roadStatus.roadName
+        binding.roadDetails.roadStatusLabel.text = roadStatus.statusSeverityDescription
     }
 
     private fun showError(reason: FailureReason) {

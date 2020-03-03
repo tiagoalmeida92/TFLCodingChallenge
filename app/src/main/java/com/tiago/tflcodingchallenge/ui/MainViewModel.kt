@@ -8,8 +8,9 @@ import com.tiago.usecases.tflcodingchallenge.usecases.GetRoadStatus
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class MainViewModel(
+class MainViewModel @Inject constructor(
     private val getRoadStatus: GetRoadStatus
 ) : ViewModel() {
 
@@ -44,6 +45,5 @@ class MainViewModel(
         super.onCleared()
         compositeDisposable.clear()
     }
-
 
 }

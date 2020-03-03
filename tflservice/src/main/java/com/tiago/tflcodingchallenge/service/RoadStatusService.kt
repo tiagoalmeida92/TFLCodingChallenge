@@ -5,7 +5,7 @@ import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusDataSource
 import io.reactivex.Single
 
-class RoadStatusDataSourceImpl(
+class RoadStatusService(
     private val roadStatusApi: RoadStatusApi,
     private val parser: RoadStatusResponseParser
 ): RoadStatusDataSource {
