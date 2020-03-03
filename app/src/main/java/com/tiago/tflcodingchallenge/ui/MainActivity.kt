@@ -60,13 +60,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun showError(reason: FailureReason) {
         hideLoading()
-        val errorMessageId =
-            when(reason){
-                FailureReason.ROAD_NOT_FOUND -> R.string.error_road_not_found
-                FailureReason.SERVER_ERROR -> R.string.error_server_down
-                FailureReason.NETWORK_ERROR -> R.string.error_network
-                FailureReason.UNKNOWN -> R.string.error_unknown
-            }
+        val errorMessageId = when (reason) {
+            FailureReason.ROAD_NOT_FOUND -> R.string.error_road_not_found
+            FailureReason.SERVER_ERROR -> R.string.error_server_down
+            FailureReason.NETWORK_ERROR -> R.string.error_network
+            FailureReason.UNKNOWN -> R.string.error_unknown
+        }
 
         Toast.makeText(this, errorMessageId, Toast.LENGTH_SHORT).show()
     }

@@ -29,7 +29,6 @@ class RoadStatusResponseParserTest {
 
         assertEquals(Status.SUCCESS, roadStatusResponse.status)
         assertEquals(expectedRoadStatus, roadStatusResponse.roadStatus)
-        assertNull(roadStatusResponse.failureReason)
     }
 
     @Test
@@ -40,7 +39,6 @@ class RoadStatusResponseParserTest {
 
         assertEquals(Status.FAILURE, roadStatusResponse.status)
         assertEquals(FailureReason.ROAD_NOT_FOUND, roadStatusResponse.failureReason)
-        assertNull(roadStatusResponse.roadStatus)
     }
 
     @Test
@@ -51,7 +49,6 @@ class RoadStatusResponseParserTest {
 
         assertEquals(Status.FAILURE, roadStatusResponse.status)
         assertEquals(FailureReason.SERVER_ERROR, roadStatusResponse.failureReason)
-        assertNull(roadStatusResponse.roadStatus)
     }
 
     private fun createNotFoundResponse(): RawRoadStatusResponse {
