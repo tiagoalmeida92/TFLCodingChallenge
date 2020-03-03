@@ -30,5 +30,4 @@ object RoadStatusModule {
     ): RoadStatusDataSource {
         return RoadStatusService(roadStatusApi, parser)
     }
-
 }

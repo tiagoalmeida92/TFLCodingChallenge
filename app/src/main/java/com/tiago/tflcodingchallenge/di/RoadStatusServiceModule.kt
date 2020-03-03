@@ -19,7 +19,7 @@ object RoadStatusServiceModule {
     fun provideRoadStatusApi(
         roadStatusApiFactory: RoadStatusApiFactory
     ): RoadStatusApi {
-        return roadStatusApiFactory.createForEndpoint(BuildConfig.TFL_SERVICE_BASE_URL) //TODO
+        return roadStatusApiFactory.createForEndpoint(BuildConfig.TFL_SERVICE_BASE_URL) // TODO
     }
 
     @JvmStatic

@@ -5,11 +5,11 @@ import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.disposables.Disposable
 import io.reactivex.internal.schedulers.ExecutorScheduler
 import io.reactivex.plugins.RxJavaPlugins
+import java.util.concurrent.Executor
+import java.util.concurrent.TimeUnit
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
-import java.util.concurrent.Executor
-import java.util.concurrent.TimeUnit
 
 class RxImmediateSchedulerRule : TestRule {
     private val immediate = object : Scheduler() {

@@ -3,7 +3,7 @@ package com.tiago.tflcodingchallenge.testdata
 import com.tiago.tflcodingchallenge.entities.RoadStatus
 import com.tiago.tflcodingchallenge.entities.RoadStatusSeverity
 
-class RoadStatusBuilder private constructor(){
+class RoadStatusBuilder private constructor() {
     companion object {
         const val DEFAULT_ID = "A1"
         const val DEFAULT_NAME = "A1"

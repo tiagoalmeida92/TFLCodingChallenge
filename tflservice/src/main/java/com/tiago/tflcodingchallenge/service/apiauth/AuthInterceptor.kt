@@ -1,6 +1,5 @@
 package com.tiago.tflcodingchallenge.service.apiauth
 
-import com.tiago.tflcodingchallenge.service.apiauth.ApiAuthProvider
 import okhttp3.Interceptor
 import okhttp3.Response
 

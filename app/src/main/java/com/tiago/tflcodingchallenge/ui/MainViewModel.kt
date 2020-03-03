@@ -21,7 +21,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun submitSearchButtonClick(roadId: String) {
-        //TODO do some validation
+        // TODO do some validation
         compositeDisposable.add(getRoadStatus.getRoadStatus(roadId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -37,13 +37,10 @@ class MainViewModel @Inject constructor(
                     liveData.value = MainViewState.Error(FailureReason.NETWORK_ERROR)
                 })
         )
-
-
     }
 
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.clear()
     }
-
 }

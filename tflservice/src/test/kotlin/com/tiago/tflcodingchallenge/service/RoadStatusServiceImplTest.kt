@@ -10,12 +10,12 @@ import com.tiago.tflcodingchallenge.testdata.RoadStatusBuilder.Companion.aRoadSt
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 import io.reactivex.Single
+import java.io.IOException
 import okhttp3.ResponseBody
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import retrofit2.Response
-import java.io.IOException
 
 class RoadStatusServiceImplTest {
 
@@ -89,7 +89,7 @@ class RoadStatusServiceImplTest {
     }
 
     @Test
-    fun givenNetworkError_whenFetchRoadStatus_thenNetworkErrorReturned(){
+    fun givenNetworkError_whenFetchRoadStatus_thenNetworkErrorReturned() {
         val roadId = "A1"
 
         given(roadStatusApi.roadStatus(any())).willReturn(
@@ -100,5 +100,4 @@ class RoadStatusServiceImplTest {
         verify(roadStatusApi).roadStatus(roadId)
         testSubscriber.assertError(IOException::class.java)
     }
-
 }

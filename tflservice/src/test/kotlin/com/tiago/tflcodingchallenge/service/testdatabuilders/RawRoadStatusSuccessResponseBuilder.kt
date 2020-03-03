@@ -43,5 +43,4 @@ class RawRoadStatusSuccessResponseBuilder private constructor() {
         this.statusSeverityDescription = statusSeverityDescription
         return this
     }
-
 }

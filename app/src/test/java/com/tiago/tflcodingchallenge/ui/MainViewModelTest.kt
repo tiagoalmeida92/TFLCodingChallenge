@@ -9,10 +9,10 @@ import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 import com.tiago.usecases.tflcodingchallenge.usecases.GetRoadStatus
 import io.reactivex.Single
+import java.io.IOException
 import junit.framework.TestCase.assertEquals
 import org.junit.Rule
 import org.junit.Test
-import java.io.IOException
 
 class MainViewModelTest {
 
@@ -27,7 +27,7 @@ class MainViewModelTest {
     private val mainViewModel = MainViewModel(getRoadStatus)
 
     @Test
-    fun whenRoadSubmitted_thenChangesToProgressStatus(){
+    fun whenRoadSubmitted_thenChangesToProgressStatus() {
         val roadId = "A1"
 
         given(getRoadStatus.getRoadStatus(roadId))
@@ -52,7 +52,7 @@ class MainViewModelTest {
     }
 
     @Test
-    fun givenRoadNotFound_whenRoadSubmitted_thenNotFoundErrorReturned(){
+    fun givenRoadNotFound_whenRoadSubmitted_thenNotFoundErrorReturned() {
         val roadId = "A99"
         val expectedFailureReason = FailureReason.ROAD_NOT_FOUND
 
@@ -65,7 +65,7 @@ class MainViewModelTest {
     }
 
     @Test
-    fun givenGetRoadReturnsException_whenRoadSubmitted_thenErrorReturned(){
+    fun givenGetRoadReturnsException_whenRoadSubmitted_thenErrorReturned() {
         val roadId = "A1"
 
         given(getRoadStatus.getRoadStatus(roadId))

@@ -8,5 +8,4 @@ class UserAssertions {
     fun seesSearchBar() {
         assertDisplayed(R.id.roadNameInput)
     }
-
 }

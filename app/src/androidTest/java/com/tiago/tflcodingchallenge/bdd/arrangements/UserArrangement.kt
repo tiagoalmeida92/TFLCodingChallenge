@@ -7,7 +7,7 @@ import com.tiago.tflcodingchallenge.ui.MainActivity
 class UserArrangement(
     private val activityTestRule: ActivityTestRule<MainActivity>
 ) {
-    fun launchesApp(){
+    fun launchesApp() {
         activityTestRule.launchActivity(Intent())
     }
 }

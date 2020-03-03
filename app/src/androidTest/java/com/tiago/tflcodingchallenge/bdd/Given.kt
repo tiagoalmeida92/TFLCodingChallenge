@@ -1,6 +1,5 @@
 package com.tiago.tflcodingchallenge.bdd
 
-import android.content.Intent
 import androidx.test.rule.ActivityTestRule
 import com.tiago.tflcodingchallenge.bdd.arrangements.UserArrangement
 import com.tiago.tflcodingchallenge.ui.MainActivity

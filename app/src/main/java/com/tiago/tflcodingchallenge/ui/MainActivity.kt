@@ -12,8 +12,8 @@ import com.tiago.tflcodingchallenge.databinding.ActivityMainBinding
 import com.tiago.tflcodingchallenge.entities.RoadStatus
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import injector
-import kotlinx.android.synthetic.main.activity_main.view.*
 import javax.inject.Inject
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun observeViewModel() {
         mainViewModel.liveData.observe(this, Observer { state ->
             when (state) {
-                //is MainViewState.WaitingInput -> showInitialState()
+                // is MainViewState.WaitingInput -> showInitialState()
                 is MainViewState.Error -> showError(state.reason)
                 is MainViewState.Loading -> showLoading()
                 is MainViewState.Data -> showRoadStatus(state.roadStatus)
@@ -77,5 +77,4 @@ class MainActivity : AppCompatActivity() {
     private fun hideLoading() {
         binding.progressView.visibility = GONE
     }
-
 }

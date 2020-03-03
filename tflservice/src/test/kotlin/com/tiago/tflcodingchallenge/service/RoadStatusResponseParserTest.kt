@@ -9,7 +9,6 @@ import com.tiago.tflcodingchallenge.testdata.RoadStatusBuilder.Companion.aRoadSt
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.Status
 import junit.framework.TestCase.assertEquals
-import junit.framework.TestCase.assertNull
 import org.junit.Test
 
 class RoadStatusResponseParserTest {
@@ -69,5 +68,4 @@ class RoadStatusResponseParserTest {
             )
         ))
     }
-
 }

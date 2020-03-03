@@ -7,7 +7,7 @@ class RoadStatusResponse private constructor(
     val status: Status,
     private val _roadStatus: RoadStatus? = null,
     private val _failureReason: FailureReason? = null
-){
+) {
 
     companion object {
         fun createSuccess(roadStatus: RoadStatus): RoadStatusResponse {
@@ -17,7 +17,7 @@ class RoadStatusResponse private constructor(
             )
         }
 
-        fun createFailure(failureReason: FailureReason?) : RoadStatusResponse {
+        fun createFailure(failureReason: FailureReason?): RoadStatusResponse {
             return RoadStatusResponse(
                 Status.FAILURE,
                 _failureReason = failureReason
@@ -27,7 +27,7 @@ class RoadStatusResponse private constructor(
 
     val roadStatus: RoadStatus
         get() {
-            if(_roadStatus == null){
+            if (_roadStatus == null) {
                 throw IllegalStateException("RoadStatus only accessible when status is SUCCESS")
             }
             return _roadStatus
@@ -35,7 +35,7 @@ class RoadStatusResponse private constructor(
 
     val failureReason: FailureReason
         get() {
-            if(_failureReason == null){
+            if (_failureReason == null) {
                 throw IllegalStateException("FailureReason only accessible when status is FAILURE")
             }
             return _failureReason

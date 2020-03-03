@@ -14,6 +14,5 @@ open class MotherTest {
 
     protected val given = Given(activityRule)
     protected val `when` = When()
-    protected  val then = Then()
-
+    protected val then = Then()
 }

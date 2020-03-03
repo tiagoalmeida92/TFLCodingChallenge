@@ -52,5 +52,4 @@ class RoadStatusApiTest {
                 assertEquals("/Road/$roadId?app_id=$appId&app_key=$appKey", request.path)
             }
     }
-
 }
