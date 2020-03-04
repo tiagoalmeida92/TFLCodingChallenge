@@ -1,3 +1,7 @@
 package com.tiago.tflcodingchallenge.bdd
 
-class When
+import com.tiago.tflcodingchallenge.bdd.actions.UserActions
+
+class When {
+    val user = UserActions()
+}

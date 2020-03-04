@@ -13,7 +13,7 @@ android {
         targetSdkVersion targetSdkVersionSet
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.tiago.tflcodingchallenge.config.MockTestRunner"
 
 
         //Setup API variables
@@ -71,4 +71,6 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$testRulesVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
     androidTestImplementation "com.schibsted.spain:barista:$baristaVersion"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
+
 }

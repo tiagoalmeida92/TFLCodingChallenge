@@ -32,4 +32,5 @@ ext {
     testExtJunitVersion = '1.1.1'
     testRulesVersion = '1.2.0'
     mockitoKotlinVersion = '2.1.0'
+    mockWebServerVersion = '3.12.0'
 }
