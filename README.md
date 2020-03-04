@@ -4,7 +4,20 @@ The repository has the goal of showcasing my skills on Android
 Development
 
 This app allows checking the status of roads in London, including
-traffic and closures
+traffic and closures for this the [TFL API](https://api.tfl.gov.uk/) was used
+
+## Configuration
+
+1. To build the app you need an `APP_ID` and `APP_KEY` from
+   [TFL API](https://api.tfl.gov.uk/) this step requires registration.
+2.  Create a file with the name `tflapi.properties` on the root of the
+    project
+3.  The content of the file must be the following, replace X according
+    to your api credentials
+
+        base_url="https://api.tfl.gov.uk/"
+        app_id="X"
+        app_key="X"
 
 
 ## Building
