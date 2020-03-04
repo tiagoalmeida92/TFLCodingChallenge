@@ -32,5 +32,4 @@ class ServerRule : ExternalResource() {
     override fun after() {
         server.shutdown()
     }
-
 }

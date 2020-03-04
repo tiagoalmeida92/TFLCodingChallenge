@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import injector
 import javax.inject.Inject
 
-abstract class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
     @Inject
     protected lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -15,5 +15,4 @@ abstract class BaseActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         injector.inject(this)
     }
-
 }

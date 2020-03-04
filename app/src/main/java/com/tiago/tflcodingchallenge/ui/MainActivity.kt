@@ -3,7 +3,6 @@ package com.tiago.tflcodingchallenge.ui
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -21,7 +20,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Create layout, bindings and set View
+        // Create layout, bindings and set View
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setClickListeners()
@@ -49,7 +48,7 @@ class MainActivity : BaseActivity() {
     private fun showRoadStatus(roadStatus: RoadStatus) {
         hideLoading()
         binding.roadDetails.visibility = VISIBLE
-        val backgroundColorId = when(roadStatus.statusSeverity){
+        val backgroundColorId = when (roadStatus.statusSeverity) {
             getString(R.string.roadStatusGood) -> R.color.roadStatusGood
             getString(R.string.roadStatusClosure) -> R.color.roadStatusClosure
             else -> R.color.unknownRoadStatus

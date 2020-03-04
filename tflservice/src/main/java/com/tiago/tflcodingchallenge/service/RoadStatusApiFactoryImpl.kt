@@ -1,6 +1,5 @@
 package com.tiago.tflcodingchallenge.service
 
-import com.tiago.service.RoadStatusApiFactory
 import com.tiago.tflcodingchallenge.service.apiauth.ApiAuthProvider
 import com.tiago.tflcodingchallenge.service.apiauth.AuthInterceptor
 import okhttp3.OkHttpClient

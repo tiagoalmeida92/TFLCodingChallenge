@@ -21,7 +21,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun submitSearchButtonClick(roadId: String) {
-        if(roadId.isEmpty()){
+        if (roadId.isEmpty()) {
             liveData.value = MainViewState.Error(FailureReason.EMPTY_ROAD_ID)
             return
         }

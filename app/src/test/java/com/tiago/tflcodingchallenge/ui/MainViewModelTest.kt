@@ -10,10 +10,10 @@ import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 import com.tiago.usecases.tflcodingchallenge.usecases.GetRoadStatus
 import io.reactivex.Single
+import java.io.IOException
 import junit.framework.TestCase.assertEquals
 import org.junit.Rule
 import org.junit.Test
-import java.io.IOException
 
 class MainViewModelTest {
 

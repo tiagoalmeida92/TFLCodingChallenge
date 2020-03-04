@@ -5,13 +5,12 @@ import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertN
 import com.tiago.tflcodingchallenge.R
 import com.tiago.tflcodingchallenge.bdd.arrangements.TestData
 
-
 class MainScreenAssertions {
     fun seesSearchBar() {
         assertDisplayed(R.id.roadNameInput)
     }
 
-    fun seesRoadStatus(){
+    fun seesRoadStatus() {
         assertDisplayed(R.id.roadName, TestData.roadDisplayName)
         assertDisplayed(R.id.roadStatus, TestData.roadStatusSeverity)
         assertDisplayed(R.id.roadStatusDescription, TestData.roadStatusSeverityDescription)

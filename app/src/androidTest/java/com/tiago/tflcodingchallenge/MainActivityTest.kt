@@ -1,9 +1,9 @@
 package com.tiago.tflcodingchallenge
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import java.lang.Thread.sleep
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.lang.Thread.sleep
 
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest : MotherTest() {
@@ -73,5 +73,4 @@ class MainActivityTest : MotherTest() {
         then.user.onMainScreen().doesNotSeeRoadDetails()
         then.user.onMainScreen().seesNotFoundErrorMessage()
     }
-
 }

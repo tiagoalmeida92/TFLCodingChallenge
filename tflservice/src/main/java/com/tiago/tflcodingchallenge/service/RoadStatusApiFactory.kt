@@ -1,6 +1,4 @@
-package com.tiago.service
-
-import com.tiago.tflcodingchallenge.service.RoadStatusApi
+package com.tiago.tflcodingchallenge.service
 
 interface RoadStatusApiFactory {
     fun createForEndpoint(baseUrl: String): RoadStatusApi

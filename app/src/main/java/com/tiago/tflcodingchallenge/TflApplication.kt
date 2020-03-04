@@ -9,7 +9,6 @@ open class TflApplication : Application() {
 
     lateinit var appComponent: ApplicationComponent
 
-
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerApplicationComponent
