@@ -6,7 +6,6 @@ import android.view.View.VISIBLE
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.snackbar.Snackbar
 import com.tiago.tflcodingchallenge.R
 import com.tiago.tflcodingchallenge.databinding.ActivityMainBinding
 import com.tiago.tflcodingchallenge.entities.RoadStatus
@@ -48,6 +47,7 @@ class MainActivity : BaseActivity() {
     private fun showRoadStatus(roadStatus: RoadStatus) {
         hideLoading()
         binding.roadDetails.visibility = VISIBLE
+        binding.errorBox.visibility = GONE
         val backgroundColorId = when (roadStatus.statusSeverity) {
             getString(R.string.roadStatusGood) -> R.color.roadStatusGood
             getString(R.string.roadStatusClosure) -> R.color.roadStatusClosure
@@ -62,6 +62,7 @@ class MainActivity : BaseActivity() {
     private fun showError(reason: FailureReason) {
         hideLoading()
         binding.roadDetails.visibility = GONE
+        binding.errorBox.visibility = VISIBLE
         val errorMessageId = when (reason) {
             FailureReason.ROAD_NOT_FOUND -> R.string.error_road_not_found
             FailureReason.SERVER_ERROR -> R.string.error_server_down
@@ -70,7 +71,7 @@ class MainActivity : BaseActivity() {
             FailureReason.UNKNOWN -> R.string.error_unknown
         }
 
-        Snackbar.make(binding.root, errorMessageId, Snackbar.LENGTH_LONG).show()
+        binding.errorTv.text = getString(errorMessageId)
     }
 
     private fun showLoading() {
