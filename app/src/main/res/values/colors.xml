@@ -3,4 +3,8 @@
     <color name="colorPrimary">#0F19C6</color>
     <color name="colorPrimaryDark">#0F19C6</color>
     <color name="colorAccent">#F44336</color>
+
+    <color name="roadStatusGood">#4CAF50</color>
+    <color name="roadStatusClosure">#F44336</color>
+    <color name="unknownRoadStatus">#2196F3</color>
 </resources>

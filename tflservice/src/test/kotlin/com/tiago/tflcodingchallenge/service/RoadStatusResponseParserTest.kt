@@ -1,9 +1,7 @@
 package com.tiago.tflcodingchallenge.service
 
 import com.tiago.tflcodingchallenge.entities.RoadStatus
-import com.tiago.tflcodingchallenge.entities.RoadStatusSeverity
 import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusResponse
-import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSeverity
 import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSuccessResponse
 import com.tiago.tflcodingchallenge.testdata.RoadStatusBuilder.Companion.aRoadStatus
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
@@ -19,8 +17,8 @@ class RoadStatusResponseParserTest {
         val expectedRoadStatus = aRoadStatus()
             .withId("A1")
             .withName("A1")
-            .withStatusSeverity(RoadStatusSeverity.Good)
-            .withStatusSeverityDescription("Good")
+            .withStatusSeverity("Good")
+            .withStatusSeverityDescription("No Delays")
             .build()
         val rawResponse = createSuccessfulResponse(expectedRoadStatus)
 
@@ -63,7 +61,7 @@ class RoadStatusResponseParserTest {
             RawRoadStatusSuccessResponse(
                 roadStatus.id,
                 roadStatus.roadName,
-                RawRoadStatusSeverity.values()[roadStatus.statusSeverity.ordinal],
+                roadStatus.statusSeverity,
                 roadStatus.statusSeverityDescription
             )
         ))

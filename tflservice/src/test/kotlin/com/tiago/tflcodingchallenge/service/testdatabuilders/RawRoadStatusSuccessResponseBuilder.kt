@@ -1,6 +1,5 @@
 package com.tiago.tflcodingchallenge.service.testdatabuilders
 
-import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSeverity
 import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSuccessResponse
 
 class RawRoadStatusSuccessResponseBuilder private constructor() {
@@ -8,8 +7,8 @@ class RawRoadStatusSuccessResponseBuilder private constructor() {
 
         const val DEFAULT_ID = "A1"
         const val DEFAULT_NAME = "A1"
-        val DEFAULT_STATUS_SEVERITY = RawRoadStatusSeverity.Unknown
-        const val DEFAULT_STATUS_SEVERITY_DESCRIPTION = "Unknown"
+        const val DEFAULT_STATUS_SEVERITY = "Unknown"
+        const val DEFAULT_STATUS_SEVERITY_DESCRIPTION = "There is no information"
 
         @JvmStatic
         fun aRawRoadStatusSuccessResponse() = RawRoadStatusSuccessResponseBuilder()
@@ -34,7 +33,7 @@ class RawRoadStatusSuccessResponseBuilder private constructor() {
         return this
     }
 
-    fun withStatusSeverity(statusSeverity: RawRoadStatusSeverity): RawRoadStatusSuccessResponseBuilder {
+    fun withStatusSeverity(statusSeverity: String): RawRoadStatusSuccessResponseBuilder {
         this.statusSeverity = statusSeverity
         return this
     }

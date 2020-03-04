@@ -1,13 +1,12 @@
 package com.tiago.tflcodingchallenge.testdata
 
 import com.tiago.tflcodingchallenge.entities.RoadStatus
-import com.tiago.tflcodingchallenge.entities.RoadStatusSeverity
 
 class RoadStatusBuilder private constructor() {
     companion object {
         const val DEFAULT_ID = "A1"
         const val DEFAULT_NAME = "A1"
-        val DEFAULT_STATUS_SEVERITY = RoadStatusSeverity.UNKNOWN
+        const val DEFAULT_STATUS_SEVERITY = "Unknown"
         const val DEFAULT_STATUS_SEVERITY_DESCRIPTION = "Unknown"
 
         @JvmStatic
@@ -29,7 +28,7 @@ class RoadStatusBuilder private constructor() {
         return this
     }
 
-    fun withStatusSeverity(statusSeverity: RoadStatusSeverity): RoadStatusBuilder {
+    fun withStatusSeverity(statusSeverity: String): RoadStatusBuilder {
         this.statusSeverity = statusSeverity
         return this
     }

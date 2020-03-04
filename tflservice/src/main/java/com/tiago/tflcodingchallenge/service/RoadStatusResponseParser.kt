@@ -1,7 +1,6 @@
 package com.tiago.tflcodingchallenge.service
 
 import com.tiago.tflcodingchallenge.entities.RoadStatus
-import com.tiago.tflcodingchallenge.entities.RoadStatusSeverity
 import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusResponse
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
@@ -19,9 +18,7 @@ open class RoadStatusResponseParser {
         val roadStatus = RoadStatus(
             rawRoadStatus.id,
             rawRoadStatus.displayName,
-            rawRoadStatus.statusSeverity?.let {
-                RoadStatusSeverity.values()[rawRoadStatus.statusSeverity.ordinal]
-            } ?: RoadStatusSeverity.UNKNOWN,
+            rawRoadStatus.statusSeverity,
             rawRoadStatus.statusSeverityDescription
         )
         return RoadStatusResponse.createSuccess(roadStatus)

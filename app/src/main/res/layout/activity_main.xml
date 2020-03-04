@@ -50,29 +50,56 @@
         android:id="@+id/roadDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
         android:layout_marginTop="16dp"
-        android:padding="16dp"
         android:visibility="gone"
+        tools:visiblity="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roadNameInput">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/roadNameLabel"
-                style="@style/RoadLabel"
-                android:text="@string/roadName"
+                android:id="@+id/roadName"
+                style="@style/RoadValue"
+                android:textSize="25sp"
+                tools:text="A23"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/roadStatusLabel"
                 style="@style/RoadLabel"
                 android:text="@string/roadStatus"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/roadNameLabel" />
+                app:layout_constraintTop_toBottomOf="@id/roadName" />
+
+            <TextView
+                android:id="@+id/roadStatus"
+                style="@style/RoadValue"
+                tools:text="Very long delays"
+                app:layout_constraintTop_toBottomOf="@+id/roadStatusLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/roadStatusDescriptionLabel"
+                style="@style/RoadLabel"
+                android:text="@string/road_status_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roadStatus" />
+
+            <TextView
+                android:id="@+id/roadStatusDescription"
+                style="@style/RoadValue"
+                tools:text="A more detailed description"
+                app:layout_constraintTop_toBottomOf="@+id/roadStatusDescriptionLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

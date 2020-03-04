@@ -5,6 +5,7 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tiago.tflcodingchallenge.R
@@ -12,8 +13,8 @@ import com.tiago.tflcodingchallenge.databinding.ActivityMainBinding
 import com.tiago.tflcodingchallenge.entities.RoadStatus
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import injector
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_main.view.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,12 +55,20 @@ class MainActivity : AppCompatActivity() {
     private fun showRoadStatus(roadStatus: RoadStatus) {
         hideLoading()
         binding.roadDetails.visibility = VISIBLE
-        binding.roadDetails.roadNameLabel.text = roadStatus.roadName
-        binding.roadDetails.roadStatusLabel.text = roadStatus.statusSeverityDescription
+        val backgroundColorId = when(roadStatus.statusSeverity){
+            getString(R.string.roadStatusGood) -> R.color.roadStatusGood
+            getString(R.string.roadStatusClosure) -> R.color.roadStatusClosure
+            else -> R.color.unknownRoadStatus
+        }
+        binding.roadDetails.setCardBackgroundColor(ContextCompat.getColor(this, backgroundColorId))
+        binding.roadDetails.roadName.text = roadStatus.roadName
+        binding.roadDetails.roadStatus.text = roadStatus.statusSeverity
+        binding.roadDetails.roadStatusDescription.text = roadStatus.statusSeverityDescription
     }
 
     private fun showError(reason: FailureReason) {
         hideLoading()
+        binding.roadDetails.visibility = GONE
         val errorMessageId = when (reason) {
             FailureReason.ROAD_NOT_FOUND -> R.string.error_road_not_found
             FailureReason.SERVER_ERROR -> R.string.error_server_down

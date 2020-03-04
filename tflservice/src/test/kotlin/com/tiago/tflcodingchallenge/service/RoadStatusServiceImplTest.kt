@@ -4,7 +4,6 @@ import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
-import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSeverity
 import com.tiago.tflcodingchallenge.service.responses.RawRoadStatusSuccessResponse
 import com.tiago.tflcodingchallenge.testdata.RoadStatusBuilder.Companion.aRoadStatus
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
@@ -37,7 +36,7 @@ class RoadStatusServiceImplTest {
         val rawRoadStatusSuccessResponse = RawRoadStatusSuccessResponse(
             roadStatus.id,
             roadStatus.roadName,
-            RawRoadStatusSeverity.Unknown,
+            roadStatus.statusSeverity,
             roadStatus.statusSeverityDescription
         )
 
