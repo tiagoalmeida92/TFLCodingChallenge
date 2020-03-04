@@ -40,12 +40,12 @@
         android:id="@+id/roadDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
         android:layout_marginTop="16dp"
         android:visibility="gone"
-        tools:visiblity="visible"
+        app:cardCornerRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roadNameInput">
+        app:layout_constraintTop_toBottomOf="@+id/roadNameInput"
+        tools:visiblity="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,9 +56,9 @@
                 android:id="@+id/roadName"
                 style="@style/RoadValue"
                 android:textSize="25sp"
-                tools:text="A23"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="A23" />
 
 
             <TextView
@@ -71,10 +71,9 @@
             <TextView
                 android:id="@+id/roadStatus"
                 style="@style/RoadValue"
-                tools:text="Very long delays"
-                app:layout_constraintTop_toBottomOf="@+id/roadStatusLabel"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/roadStatusLabel"
+                tools:text="Very long delays" />
 
             <TextView
                 android:id="@+id/roadStatusDescriptionLabel"
@@ -86,10 +85,9 @@
             <TextView
                 android:id="@+id/roadStatusDescription"
                 style="@style/RoadValue"
-                tools:text="A more detailed description"
-                app:layout_constraintTop_toBottomOf="@+id/roadStatusDescriptionLabel"
                 app:layout_constraintStart_toStartOf="parent"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/roadStatusDescriptionLabel"
+                tools:text="A more detailed description" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -100,24 +98,23 @@
         android:id="@+id/errorBox"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/unknownRoadStatus"
         android:layout_marginTop="16dp"
         android:visibility="gone"
-        tools:visiblity="visible"
+        app:cardBackgroundColor="@color/unknownRoadStatus"
+        app:cardCornerRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roadNameInput">
+        app:layout_constraintTop_toBottomOf="@+id/roadNameInput"
+        tools:visiblity="visible">
 
         <TextView
             android:id="@+id/errorTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textSize="25sp"
-            android:textColor="@android:color/white"
             android:layout_gravity="center"
+            android:layout_margin="16dp"
             android:gravity="center"
-            />
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
     </androidx.cardview.widget.CardView>
 
