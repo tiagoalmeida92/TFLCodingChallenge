@@ -1,6 +1,6 @@
 package com.tiago.tflcodingchallenge.di
 
-import com.tiago.tflcodingchallenge.ui.MainActivity
+import com.tiago.tflcodingchallenge.ui.BaseActivity
 import dagger.Component
 import javax.inject.Singleton
 
@@ -11,5 +11,5 @@ import javax.inject.Singleton
     ]
 )
 interface ApplicationComponent {
-    fun inject(activity: MainActivity)
+    fun inject(activity: BaseActivity)
 }
