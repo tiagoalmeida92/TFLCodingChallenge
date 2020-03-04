@@ -2,6 +2,7 @@ package com.tiago.tflcodingchallenge.di
 
 import com.tiago.service.RoadStatusApiFactory
 import com.tiago.tflcodingchallenge.BuildConfig
+import com.tiago.tflcodingchallenge.TflApplication
 import com.tiago.tflcodingchallenge.service.RoadStatusApi
 import com.tiago.tflcodingchallenge.service.RoadStatusApiFactoryImpl
 import com.tiago.tflcodingchallenge.service.RoadStatusResponseParser
@@ -17,9 +18,10 @@ object RoadStatusServiceModule {
     @JvmStatic
     @Provides
     fun provideRoadStatusApi(
+        tflApplication: TflApplication,
         roadStatusApiFactory: RoadStatusApiFactory
     ): RoadStatusApi {
-        return roadStatusApiFactory.createForEndpoint(BuildConfig.TFL_SERVICE_BASE_URL) // TODO
+        return roadStatusApiFactory.createForEndpoint(tflApplication.tflApiUrl)
     }
 
     @JvmStatic

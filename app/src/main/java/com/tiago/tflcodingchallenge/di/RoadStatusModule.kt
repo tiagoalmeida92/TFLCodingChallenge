@@ -10,6 +10,7 @@ import dagger.Provides
 
 @Module(
     includes = [
+        AppModule::class,
         RoadStatusServiceModule::class,
         ViewModelModule::class
     ]
