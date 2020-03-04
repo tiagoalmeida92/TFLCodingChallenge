@@ -3,16 +3,17 @@ package com.tiago.tflcodingchallenge.ui
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.verifyZeroInteractions
 import com.tiago.tflcodingchallenge.testdata.RoadStatusBuilder.Companion.aRoadStatus
 import com.tiago.tflcodingchallenge.ui.helpers.RxImmediateSchedulerRule
 import com.tiago.usecases.tflcodingchallenge.dataaccess.FailureReason
 import com.tiago.usecases.tflcodingchallenge.dataaccess.RoadStatusResponse
 import com.tiago.usecases.tflcodingchallenge.usecases.GetRoadStatus
 import io.reactivex.Single
-import java.io.IOException
 import junit.framework.TestCase.assertEquals
 import org.junit.Rule
 import org.junit.Test
+import java.io.IOException
 
 class MainViewModelTest {
 
@@ -36,6 +37,16 @@ class MainViewModelTest {
         mainViewModel.submitSearchButtonClick(roadId)
 
         assertEquals(MainViewState.Loading, mainViewModel.liveData.value)
+    }
+
+    @Test
+    fun givenRoadIdIsEmpty_whenRoadSubmitted_thenEmptyInputErrorReturned() {
+        val roadId = ""
+
+        mainViewModel.submitSearchButtonClick(roadId)
+
+        verifyZeroInteractions(getRoadStatus)
+        assertEquals(MainViewState.Error(FailureReason.EMPTY_ROAD_ID), mainViewModel.liveData.value)
     }
 
     @Test

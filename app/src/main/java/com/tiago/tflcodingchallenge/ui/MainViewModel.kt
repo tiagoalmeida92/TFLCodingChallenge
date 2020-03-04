@@ -21,7 +21,10 @@ class MainViewModel @Inject constructor(
     }
 
     fun submitSearchButtonClick(roadId: String) {
-        // TODO do some validation
+        if(roadId.isEmpty()){
+            liveData.value = MainViewState.Error(FailureReason.EMPTY_ROAD_ID)
+            return
+        }
         compositeDisposable.add(getRoadStatus.getRoadStatus(roadId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

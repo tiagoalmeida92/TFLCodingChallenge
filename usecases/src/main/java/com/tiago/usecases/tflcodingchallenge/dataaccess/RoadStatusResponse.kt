@@ -51,5 +51,6 @@ enum class FailureReason {
     ROAD_NOT_FOUND,
     SERVER_ERROR,
     NETWORK_ERROR,
+    EMPTY_ROAD_ID,
     UNKNOWN
 }

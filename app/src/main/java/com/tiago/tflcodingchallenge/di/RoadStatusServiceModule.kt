@@ -1,7 +1,6 @@
 package com.tiago.tflcodingchallenge.di
 
-import com.tiago.service.RoadStatusApiFactory
-import com.tiago.tflcodingchallenge.BuildConfig
+import com.tiago.tflcodingchallenge.service.RoadStatusApiFactory
 import com.tiago.tflcodingchallenge.TflApplication
 import com.tiago.tflcodingchallenge.service.RoadStatusApi
 import com.tiago.tflcodingchallenge.service.RoadStatusApiFactoryImpl

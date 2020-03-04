@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.tiago.tflcodingchallenge.R
 import com.tiago.tflcodingchallenge.databinding.ActivityMainBinding
 import com.tiago.tflcodingchallenge.entities.RoadStatus
@@ -66,10 +67,11 @@ class MainActivity : BaseActivity() {
             FailureReason.ROAD_NOT_FOUND -> R.string.error_road_not_found
             FailureReason.SERVER_ERROR -> R.string.error_server_down
             FailureReason.NETWORK_ERROR -> R.string.error_network
+            FailureReason.EMPTY_ROAD_ID -> R.string.error_empty_input
             FailureReason.UNKNOWN -> R.string.error_unknown
         }
 
-        Toast.makeText(this, errorMessageId, Toast.LENGTH_SHORT).show()
+        Snackbar.make(binding.root, errorMessageId, Snackbar.LENGTH_LONG).show()
     }
 
     private fun showLoading() {

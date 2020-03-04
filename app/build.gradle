@@ -57,6 +57,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
 
+    implementation "com.google.android.material:material:$materialVersion"
 
     //Image loading
     implementation "com.squareup.picasso:picasso:$picassoVersion"

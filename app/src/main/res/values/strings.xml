@@ -13,4 +13,5 @@
     //Road Severity codes
     <string name="roadStatusGood">Good</string>
     <string name="roadStatusClosure">Closure</string>
+    <string name="error_empty_input">Error: Road Id must not be empty</string>
 </resources>
